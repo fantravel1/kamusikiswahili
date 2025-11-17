@@ -380,16 +380,151 @@
                 background: white;
                 color: black;
             }
-            
+
             .category-card {
                 box-shadow: none;
                 border: 1px solid #ccc;
                 break-inside: avoid;
             }
-            
+
             .stats-section {
                 display: none;
             }
+        }
+
+        /* Pronunciation Features */
+        .speaker-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-left: 8px;
+            padding: 4px;
+            transition: transform 0.2s ease;
+            vertical-align: middle;
+        }
+
+        .speaker-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .speaker-btn:active {
+            transform: scale(0.9);
+        }
+
+        .pronunciation-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .pronunciation-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+            animation: slideDown 0.4s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #f0f0f0;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .close-modal:hover {
+            background: #667eea;
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .pronunciation-content h3 {
+            font-size: 2.5em;
+            margin: 0 0 10px 0;
+            color: #667eea;
+            text-align: center;
+        }
+
+        .pronunciation-content .translation {
+            font-size: 1.3em;
+            color: #666;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .pronunciation-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .pronounce-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .pronounce-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .pronounce-btn:active {
+            transform: translateY(0);
+        }
+
+        .pronunciation-tip {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .pronunciation-tip strong {
+            color: #667eea;
         }
     </style>
 </head>
@@ -401,10 +536,15 @@
             <p style="font-size: 0.9em; opacity: 0.8; margin-top: 8px;">🌍 East Africa • 🗣️ 100M+ Speakers • 📚 500+ Words</p>
         </div>
 
-         <div style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
-            <a href="game.html" style="color: #fff; background: #333; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold;">
-                🎮 Play Matching Game
-            </a>
+         <div style="text-align: center; margin-top: 10px; margin-bottom: 20px;">
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="game.html" style="color: #fff; background: linear-gradient(135deg, #667eea, #764ba2); padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.3s ease;">
+                    🎮 Matching Game
+                </a>
+                <a href="quiz.html" style="color: #fff; background: linear-gradient(135deg, #11998e, #38ef7d); padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.3s ease;">
+                    📚 Quiz & Flashcards
+                </a>
+            </div>
         </div>
         
         <div class="search-box">
@@ -947,14 +1087,73 @@
             });
         });
         
-        // Add click interaction for word items
+        // Text-to-Speech functionality
+        function speakWord(text, lang = 'sw') {
+            if ('speechSynthesis' in window) {
+                // Cancel any ongoing speech
+                window.speechSynthesis.cancel();
+
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = lang === 'sw' ? 'sw-KE' : 'en-US'; // Swahili (Kenya) or English
+                utterance.rate = 0.85; // Slightly slower for learning
+                utterance.pitch = 1;
+                utterance.volume = 1;
+
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('Sorry, your browser does not support text-to-speech.');
+            }
+        }
+
+        // Add speaker buttons to each word item
         document.querySelectorAll('.word-item').forEach(item => {
+            const swahiliWord = item.querySelector('.swahili-word').textContent;
+            const englishWord = item.querySelector('.english-word').textContent;
+
+            // Create speaker button for Swahili
+            const speakerBtn = document.createElement('button');
+            speakerBtn.innerHTML = '🔊';
+            speakerBtn.className = 'speaker-btn';
+            speakerBtn.title = 'Hear pronunciation';
+            speakerBtn.setAttribute('aria-label', 'Play pronunciation');
+            speakerBtn.onclick = function(e) {
+                e.stopPropagation();
+                speakWord(swahiliWord, 'sw');
+            };
+
+            item.querySelector('.swahili-word').appendChild(speakerBtn);
+
+            // Add click interaction for word items (show info)
             item.addEventListener('click', function() {
-                const swahiliWord = this.querySelector('.swahili-word').textContent;
-                const englishWord = this.querySelector('.english-word').textContent;
-                
-                // Simple pronunciation guide
-                alert(`${swahiliWord} (${englishWord})\n\nSwahili pronunciation tip: Each vowel is pronounced clearly:\na = "ah", e = "eh", i = "ee", o = "oh", u = "oo"`);
+                const modal = document.createElement('div');
+                modal.className = 'pronunciation-modal';
+                modal.innerHTML = `
+                    <div class="pronunciation-content">
+                        <button class="close-modal" onclick="this.parentElement.parentElement.remove()">✕</button>
+                        <h3>${swahiliWord}</h3>
+                        <p class="translation">${englishWord}</p>
+                        <div class="pronunciation-buttons">
+                            <button class="pronounce-btn" onclick="event.stopPropagation(); speakWord('${swahiliWord}', 'sw')">
+                                🔊 Swahili
+                            </button>
+                            <button class="pronounce-btn" onclick="event.stopPropagation(); speakWord('${englishWord}', 'en')">
+                                🔊 English
+                            </button>
+                        </div>
+                        <div class="pronunciation-tip">
+                            <strong>Pronunciation tip:</strong><br>
+                            Swahili vowels: a="ah", e="eh", i="ee", o="oh", u="oo"
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+
+                // Close on background click
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.remove();
+                    }
+                });
             });
         });
         

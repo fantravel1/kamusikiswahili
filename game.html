@@ -3,12 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Swahili Match Game</title>
+  <title>Swahili Match Game - Kamusi ya Kiswahili</title>
+  <meta name="description" content="Interactive Swahili matching game - test your knowledge of Swahili words">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Match English & Swahili Words</h1>
-  <div id="game" class="game-container"></div>
+  <div class="game-wrapper">
+    <header class="game-header">
+      <h1>🎮 Match English & Swahili Words</h1>
+      <div class="game-controls">
+        <button class="back-button" onclick="window.location.href='index.html'">⬅️ Back to Dictionary</button>
+        <select id="difficulty" class="difficulty-select">
+          <option value="easy">Easy (5 words)</option>
+          <option value="medium" selected>Medium (8 words)</option>
+          <option value="hard">Hard (12 words)</option>
+        </select>
+        <button id="newGame" class="new-game-button">🔄 New Game</button>
+      </div>
+    </header>
+
+    <div class="score-panel">
+      <div class="score-item">
+        <span class="score-label">Score:</span>
+        <span id="score" class="score-value">0</span>
+      </div>
+      <div class="score-item">
+        <span class="score-label">Matches:</span>
+        <span id="matches" class="score-value">0/0</span>
+      </div>
+      <div class="score-item">
+        <span class="score-label">Streak:</span>
+        <span id="streak" class="score-value">0</span>
+      </div>
+      <div class="score-item">
+        <span class="score-label">Time:</span>
+        <span id="timer" class="score-value">0:00</span>
+      </div>
+    </div>
+
+    <div id="game" class="game-container"></div>
+
+    <div id="congratsModal" class="modal hidden">
+      <div class="modal-content">
+        <h2>🎉 Hongera! Congratulations!</h2>
+        <p class="modal-score">Final Score: <span id="finalScore">0</span></p>
+        <p class="modal-time">Time: <span id="finalTime">0:00</span></p>
+        <p class="modal-streak">Best Streak: <span id="finalStreak">0</span></p>
+        <div class="modal-buttons">
+          <button onclick="location.reload()" class="modal-button primary">Play Again</button>
+          <button onclick="window.location.href='index.html'" class="modal-button">Back to Dictionary</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
