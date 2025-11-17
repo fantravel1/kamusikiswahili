@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- Main Dictionary Page -->
+    <url>
+        <loc>https://kamusikirswahili.com/</loc>
+        <lastmod>2025-01-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="sw" href="https://kamusikirswahili.com/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://kamusikirswahili.com/" />
+    </url>
+
+    <!-- Quiz Page -->
+    <url>
+        <loc>https://kamusikirswahili.com/quiz.html</loc>
+        <lastmod>2025-01-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Game Page -->
+    <url>
+        <loc>https://kamusikirswahili.com/game.html</loc>
+        <lastmod>2025-01-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+</urlset>
