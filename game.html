@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Swahili Match Game - Kamusi ya Kiswahili</title>
   <meta name="description" content="Interactive Swahili matching game - test your knowledge of Swahili words">
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#667eea">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -98,6 +103,21 @@
     themeToggle.addEventListener('mouseleave', () => {
       themeToggle.style.transform = 'scale(1)';
     });
+
+    // Service Worker registration for offline support
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('✅ Service Worker registered:', registration.scope);
+          })
+          .catch(error => {
+            console.log('❌ Service Worker registration failed:', error);
+          });
+      });
+    }
+
+    console.log('📱 PWA features initialized on Game page');
   </script>
   <script src="script.js"></script>
 </body>

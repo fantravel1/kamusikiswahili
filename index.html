@@ -35,6 +35,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+
     <!-- Favicon and App Icons -->
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📖%3C/text%3E%3C/svg%3E">
     <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📖%3C/text%3E%3C/svg%3E">
@@ -1743,15 +1746,80 @@
         // Update stats on search with debouncing
         searchInput.addEventListener('input', updateStats);
         
-        // Service Worker registration for offline support (optional)
+        // Service Worker registration for offline support
+        let deferredPrompt;
+
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                // Uncomment below to enable service worker for offline support
-                // navigator.serviceWorker.register('/sw.js')
-                //     .then(registration => console.log('SW registered'))
-                //     .catch(error => console.log('SW registration failed'));
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('✅ Service Worker registered:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('❌ Service Worker registration failed:', error);
+                    });
             });
         }
+
+        // PWA Install Prompt
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallButton();
+        });
+
+        function showInstallButton() {
+            const installBtn = document.createElement('button');
+            installBtn.id = 'installBtn';
+            installBtn.innerHTML = '📱 Install App';
+            installBtn.style.cssText = `
+                position: fixed;
+                bottom: 100px;
+                right: 30px;
+                padding: 12px 24px;
+                background: linear-gradient(135deg, #11998e, #38ef7d);
+                color: white;
+                border: none;
+                border-radius: 25px;
+                font-weight: 600;
+                cursor: pointer;
+                box-shadow: 0 4px 20px rgba(17, 153, 142, 0.4);
+                z-index: 9998;
+                transition: all 0.3s ease;
+            `;
+
+            installBtn.addEventListener('mouseenter', () => {
+                installBtn.style.transform = 'scale(1.05)';
+            });
+
+            installBtn.addEventListener('mouseleave', () => {
+                installBtn.style.transform = 'scale(1)';
+            });
+
+            installBtn.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+
+                    if (outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    } else {
+                        console.log('User dismissed the install prompt');
+                    }
+
+                    deferredPrompt = null;
+                    installBtn.remove();
+                }
+            });
+
+            document.body.appendChild(installBtn);
+        }
+
+        // Track app installation
+        window.addEventListener('appinstalled', () => {
+            console.log('✅ PWA installed successfully');
+            updateProgress('appInstalled', 1);
+        });
         
         // Responsive image loading optimization
         function optimizeImages() {
@@ -1882,6 +1950,198 @@
         
         // Initialize optimization functions
         window.addEventListener('load', optimizeImages);
+
+        // Touch Gestures for Category Navigation
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        document.querySelectorAll('.category-card').forEach((card, index, cards) => {
+            card.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+            }, { passive: true });
+
+            card.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+                handleSwipeGesture(card, index, cards);
+            }, { passive: true });
+        });
+
+        function handleSwipeGesture(card, index, cards) {
+            const swipeThreshold = 50;
+            const horizontalSwipe = Math.abs(touchEndX - touchStartX);
+            const verticalSwipe = Math.abs(touchEndY - touchStartY);
+
+            // Only trigger if horizontal swipe is dominant
+            if (horizontalSwipe > verticalSwipe && horizontalSwipe > swipeThreshold) {
+                if (touchEndX < touchStartX) {
+                    // Swipe left - next category
+                    if (index < cards.length - 1) {
+                        cards[index + 1].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                } else {
+                    // Swipe right - previous category
+                    if (index > 0) {
+                        cards[index - 1].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }
+            }
+        }
+
+        // Enhanced Share Functionality with Web Share API
+        function shareWord(swahiliWord, englishWord) {
+            const shareData = {
+                title: `Kamusi ya Kiswahili - ${swahiliWord}`,
+                text: `Learn Swahili: "${swahiliWord}" means "${englishWord}" 📖`,
+                url: window.location.href + `?word=${encodeURIComponent(swahiliWord)}`
+            };
+
+            if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+                navigator.share(shareData)
+                    .then(() => console.log('✅ Shared successfully'))
+                    .catch((error) => {
+                        console.log('❌ Error sharing:', error);
+                        fallbackShare(shareData);
+                    });
+            } else {
+                fallbackShare(shareData);
+            }
+        }
+
+        function fallbackShare(shareData) {
+            const shareText = `${shareData.text}\n${shareData.url}`;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(shareText)
+                    .then(() => {
+                        showToast('📋 Link copied to clipboard!');
+                    })
+                    .catch(() => {
+                        showToast('❌ Could not copy to clipboard');
+                    });
+            } else {
+                // Legacy fallback
+                const textArea = document.createElement('textarea');
+                textArea.value = shareText;
+                textArea.style.position = 'fixed';
+                textArea.style.opacity = '0';
+                document.body.appendChild(textArea);
+                textArea.select();
+
+                try {
+                    document.execCommand('copy');
+                    showToast('📋 Link copied to clipboard!');
+                } catch (err) {
+                    showToast('❌ Could not copy to clipboard');
+                }
+
+                document.body.removeChild(textArea);
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.textContent = message;
+            toast.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 12px 24px;
+                border-radius: 25px;
+                z-index: 10000;
+                font-weight: 600;
+                animation: slideUp 0.3s ease;
+            `;
+
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.3s ease';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+
+        // Add share button to word modals
+        document.addEventListener('DOMContentLoaded', () => {
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideUp {
+                    from {
+                        opacity: 0;
+                        transform: translateX(-50%) translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateX(-50%) translateY(0);
+                    }
+                }
+
+                .share-word-btn {
+                    margin-top: 15px;
+                    padding: 10px 20px;
+                    background: linear-gradient(135deg, #667eea, #764ba2);
+                    color: white;
+                    border: none;
+                    border-radius: 20px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    width: 100%;
+                    transition: all 0.3s ease;
+                }
+
+                .share-word-btn:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+                }
+
+                @media (max-width: 768px) {
+                    #installBtn {
+                        bottom: 80px !important;
+                        right: 20px !important;
+                        padding: 10px 20px !important;
+                        font-size: 0.9em !important;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+
+        // Update word click handler to include share button
+        const originalWordClickHandler = document.querySelectorAll('.word-item');
+        originalWordClickHandler.forEach(item => {
+            const swahiliWord = item.querySelector('.swahili-word').textContent.replace('🔊', '').trim();
+            const englishWord = item.querySelector('.english-word').textContent;
+
+            item.addEventListener('click', function(e) {
+                if (e.target.classList.contains('speaker-btn')) return;
+
+                const modal = document.querySelector('.pronunciation-modal');
+                if (modal) {
+                    const shareBtn = document.createElement('button');
+                    shareBtn.className = 'share-word-btn';
+                    shareBtn.innerHTML = '🔗 Share this word';
+                    shareBtn.onclick = (e) => {
+                        e.stopPropagation();
+                        shareWord(swahiliWord, englishWord);
+                    };
+
+                    const modalContent = modal.querySelector('.pronunciation-content');
+                    const existingShareBtn = modalContent.querySelector('.share-word-btn');
+                    if (!existingShareBtn) {
+                        modalContent.appendChild(shareBtn);
+                    }
+                }
+            }, true);
+        });
+
+        console.log('📱 PWA features initialized: Service Worker, Install Prompt, Touch Gestures, Enhanced Share');
     </script>
 </body>
 </html>
