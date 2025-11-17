@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Swahili Match Game - Kamusi ya Kiswahili</title>
   <meta name="description" content="Interactive Swahili matching game - test your knowledge of Swahili words">
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#667eea">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -56,6 +61,64 @@
       </div>
     </div>
   </div>
+
+  <!-- Dark Mode Toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #667eea, #764ba2); border: none; cursor: pointer; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8em; transition: all 0.3s ease; z-index: 9999;">
+    <span id="themeIcon">🌙</span>
+  </button>
+
+  <script>
+    // Dark Mode Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElement = document.documentElement;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    function updateThemeIcon(theme) {
+      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      if (theme === 'dark') {
+        themeToggle.style.background = 'linear-gradient(135deg, #ffa500, #ff6347)';
+      } else {
+        themeToggle.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+      }
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+      htmlElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+
+    themeToggle.addEventListener('mouseenter', () => {
+      themeToggle.style.transform = 'scale(1.1) rotate(15deg)';
+    });
+
+    themeToggle.addEventListener('mouseleave', () => {
+      themeToggle.style.transform = 'scale(1)';
+    });
+
+    // Service Worker registration for offline support
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('✅ Service Worker registered:', registration.scope);
+          })
+          .catch(error => {
+            console.log('❌ Service Worker registration failed:', error);
+          });
+      });
+    }
+
+    console.log('📱 PWA features initialized on Game page');
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
