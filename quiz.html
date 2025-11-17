@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Swahili Quiz & Flashcards - Kamusi ya Kiswahili</title>
+  <meta name="description" content="Interactive Swahili flashcards and quizzes - test your knowledge with multiple quiz modes">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .quiz-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .mode-selector {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .mode-btn {
+      padding: 10px 20px;
+      border: 2px solid #667eea;
+      border-radius: 25px;
+      background: white;
+      color: #667eea;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .mode-btn:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .mode-btn.active {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border-color: #764ba2;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .control-btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      background: #555;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .control-btn:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .stat-box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .stat-label {
+      font-size: 0.85em;
+      color: #666;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .stat-value {
+      font-size: 1.5em;
+      color: #667eea;
+      font-weight: bold;
+    }
+
+    /* Flashcard Styles */
+    .flashcard-container {
+      perspective: 1000px;
+      margin-bottom: 20px;
+    }
+
+    .flashcard {
+      background: white;
+      border-radius: 20px;
+      padding: 60px 40px;
+      min-height: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      position: relative;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+
+    .flashcard.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .flashcard-front, .flashcard-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .flashcard-back {
+      transform: rotateY(180deg);
+    }
+
+    .flashcard-word {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      color: #667eea;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .flashcard-translation {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      color: #666;
+      text-align: center;
+    }
+
+    .flashcard-hint {
+      font-size: 1rem;
+      color: #999;
+      margin-top: 20px;
+      font-style: italic;
+    }
+
+    .speaker-icon {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.5em;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .speaker-icon:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .flashcard-nav {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .nav-btn {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      background: white;
+      color: #667eea;
+      font-weight: 600;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav-btn:hover {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Quiz Styles */
+    .quiz-container {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+
+    .question-text {
+      font-size: clamp(1.3rem, 4vw, 2rem);
+      color: #333;
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .options-grid {
+      display: grid;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .option-btn {
+      padding: 20px;
+      border: 3px solid #e0e0e0;
+      border-radius: 15px;
+      background: white;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+
+    .option-btn:hover {
+      border-color: #667eea;
+      background: #f8f9ff;
+      transform: translateX(5px);
+    }
+
+    .option-btn.correct {
+      background: linear-gradient(135deg, #11998e, #38ef7d);
+      color: white;
+      border-color: #11998e;
+      animation: correctPulse 0.6s ease;
+    }
+
+    .option-btn.incorrect {
+      background: linear-gradient(135deg, #ee0979, #ff6a00);
+      color: white;
+      border-color: #ee0979;
+      animation: shake 0.5s ease;
+    }
+
+    .option-btn.disabled {
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    @keyframes correctPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      75% { transform: translateX(10px); }
+    }
+
+    .next-question-btn {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      font-weight: 600;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      display: block;
+      margin: 20px auto 0;
+    }
+
+    .next-question-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .next-question-btn.hidden {
+      display: none;
+    }
+
+    /* Results Modal */
+    .results-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .results-modal.hidden {
+      display: none;
+    }
+
+    .results-content {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .results-content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .results-stats {
+      margin: 20px 0;
+      font-size: 1.2rem;
+      color: #666;
+    }
+
+    .results-stats strong {
+      color: #667eea;
+      font-size: 1.5rem;
+    }
+
+    .results-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 25px;
+    }
+
+    .result-btn {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .result-btn.primary {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+    }
+
+    .result-btn.secondary {
+      background: #f0f0f0;
+      color: #333;
+    }
+
+    .result-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      .flashcard {
+        padding: 40px 20px;
+        min-height: 300px;
+      }
+
+      .quiz-container {
+        padding: 25px;
+      }
+
+      .flashcard-nav {
+        flex-direction: column;
+      }
+
+      .nav-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-wrapper">
+    <div class="header">
+      <h1>📚 Swahili Quiz & Flashcards</h1>
+
+      <div class="mode-selector">
+        <button class="mode-btn active" data-mode="flashcard">🃏 Flashcards</button>
+        <button class="mode-btn" data-mode="multiple-choice">✅ Multiple Choice</button>
+        <button class="mode-btn" data-mode="typing">⌨️ Type Answer</button>
+      </div>
+
+      <div class="controls">
+        <button class="control-btn" onclick="window.location.href='index.html'">⬅️ Dictionary</button>
+        <button class="control-btn" onclick="window.location.href='game.html'">🎮 Matching Game</button>
+        <button class="control-btn" id="resetBtn">🔄 Reset</button>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat-box">
+        <span class="stat-label">Progress</span>
+        <span class="stat-value" id="progress">0/0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Correct</span>
+        <span class="stat-value" id="correct">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Incorrect</span>
+        <span class="stat-value" id="incorrect">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Accuracy</span>
+        <span class="stat-value" id="accuracy">0%</span>
+      </div>
+    </div>
+
+    <!-- Flashcard Mode -->
+    <div id="flashcardMode" class="mode-content">
+      <div class="flashcard-container">
+        <div class="flashcard" id="flashcard">
+          <div class="flashcard-front">
+            <div class="flashcard-word" id="frontWord">Click to start</div>
+            <div class="flashcard-hint">Click card to flip</div>
+            <button class="speaker-icon" id="frontSpeaker">🔊</button>
+          </div>
+          <div class="flashcard-back">
+            <div class="flashcard-translation" id="backWord">Translation</div>
+            <button class="speaker-icon" id="backSpeaker">🔊</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard-nav">
+        <button class="nav-btn" id="prevCard">← Previous</button>
+        <button class="nav-btn" id="shuffleBtn">🔀 Shuffle</button>
+        <button class="nav-btn" id="nextCard">Next →</button>
+      </div>
+    </div>
+
+    <!-- Quiz Mode -->
+    <div id="quizMode" class="mode-content hidden">
+      <div class="quiz-container">
+        <div class="question-text" id="question"></div>
+        <div class="options-grid" id="options"></div>
+        <button class="next-question-btn hidden" id="nextQuestion">Next Question →</button>
+      </div>
+    </div>
+
+    <!-- Results Modal -->
+    <div class="results-modal hidden" id="resultsModal">
+      <div class="results-content">
+        <h2>🎉 Quiz Complete!</h2>
+        <div class="results-stats">
+          <p>Total Questions: <strong id="totalQuestions">0</strong></p>
+          <p>Correct: <strong id="correctAnswers">0</strong></p>
+          <p>Accuracy: <strong id="finalAccuracy">0%</strong></p>
+        </div>
+        <div class="results-buttons">
+          <button class="result-btn primary" onclick="restartQuiz()">Try Again</button>
+          <button class="result-btn secondary" onclick="window.location.href='index.html'">Dictionary</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
