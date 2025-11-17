@@ -6,6 +6,24 @@
   <title>Swahili Quiz & Flashcards - Kamusi ya Kiswahili</title>
   <meta name="description" content="Interactive Swahili flashcards and quizzes - test your knowledge with multiple quiz modes">
   <style>
+    :root {
+      --bg-gradient-start: #667eea;
+      --bg-gradient-end: #764ba2;
+      --card-bg: #ffffff;
+      --card-text: #333;
+      --button-bg: #fff;
+      --button-text: #333;
+    }
+
+    [data-theme="dark"] {
+      --bg-gradient-start: #1a1a2e;
+      --bg-gradient-end: #16213e;
+      --card-bg: #2d2d44;
+      --card-text: #e0e0e0;
+      --button-bg: #3d3d5c;
+      --button-text: #e0e0e0;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -14,9 +32,10 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
       min-height: 100vh;
       padding: 20px;
+      transition: background 0.3s ease;
     }
 
     .quiz-wrapper {
@@ -25,18 +44,19 @@
     }
 
     .header {
-      background: rgba(255, 255, 255, 0.95);
+      background: var(--card-bg);
       border-radius: 16px;
       padding: 20px;
       margin-bottom: 20px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       text-align: center;
+      transition: background 0.3s ease;
     }
 
     .header h1 {
       font-size: clamp(1.5rem, 4vw, 2rem);
       margin-bottom: 10px;
-      color: #333;
+      color: var(--card-text);
     }
 
     .mode-selector {
@@ -101,11 +121,12 @@
     }
 
     .stat-box {
-      background: rgba(255, 255, 255, 0.95);
+      background: var(--card-bg);
       padding: 15px;
       border-radius: 12px;
       text-align: center;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
     }
 
     .stat-label {
@@ -128,7 +149,7 @@
     }
 
     .flashcard {
-      background: white;
+      background: var(--card-bg);
       border-radius: 20px;
       padding: 60px 40px;
       min-height: 350px;
@@ -137,7 +158,7 @@
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      transition: transform 0.6s;
+      transition: transform 0.6s, background 0.3s ease;
       transform-style: preserve-3d;
       position: relative;
       box-shadow: 0 8px 30px rgba(0,0,0,0.2);
@@ -236,15 +257,16 @@
 
     /* Quiz Styles */
     .quiz-container {
-      background: white;
+      background: var(--card-bg);
       border-radius: 20px;
       padding: 40px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
     }
 
     .question-text {
       font-size: clamp(1.3rem, 4vw, 2rem);
-      color: #333;
+      color: var(--card-text);
       margin-bottom: 30px;
       text-align: center;
       font-weight: 600;
@@ -260,7 +282,8 @@
       padding: 20px;
       border: 3px solid #e0e0e0;
       border-radius: 15px;
-      background: white;
+      background: var(--button-bg);
+      color: var(--button-text);
       font-size: 1.1em;
       font-weight: 600;
       cursor: pointer;
@@ -347,19 +370,20 @@
     }
 
     .results-content {
-      background: white;
+      background: var(--card-bg);
       padding: 40px;
       border-radius: 20px;
       box-shadow: 0 10px 40px rgba(0,0,0,0.3);
       max-width: 500px;
       width: 90%;
       text-align: center;
+      transition: background 0.3s ease;
     }
 
     .results-content h2 {
       font-size: 2rem;
       margin-bottom: 20px;
-      color: #333;
+      color: var(--card-text);
     }
 
     .results-stats {
@@ -519,6 +543,48 @@
     </div>
   </div>
 
+  <!-- Dark Mode Toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #667eea, #764ba2); border: none; cursor: pointer; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8em; transition: all 0.3s ease; z-index: 9999;">
+    <span id="themeIcon">🌙</span>
+  </button>
+
+  <script>
+    // Dark Mode Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElement = document.documentElement;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    function updateThemeIcon(theme) {
+      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      if (theme === 'dark') {
+        themeToggle.style.background = 'linear-gradient(135deg, #ffa500, #ff6347)';
+      } else {
+        themeToggle.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+      }
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+      htmlElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+
+    themeToggle.addEventListener('mouseenter', () => {
+      themeToggle.style.transform = 'scale(1.1) rotate(15deg)';
+    });
+
+    themeToggle.addEventListener('mouseleave', () => {
+      themeToggle.style.transform = 'scale(1)';
+    });
+  </script>
   <script src="quiz.js"></script>
 </body>
 </html>
