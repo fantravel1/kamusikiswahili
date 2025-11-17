@@ -298,9 +298,17 @@ function showCongratsModal() {
   document.getElementById('congratsModal').classList.remove('hidden');
 }
 
+// Track game plays for achievements
+function trackGamePlay() {
+  const progress = JSON.parse(localStorage.getItem('swahili_progress') || '{}');
+  progress.gamesPlayed = (progress.gamesPlayed || 0) + 1;
+  localStorage.setItem('swahili_progress', JSON.stringify(progress));
+}
+
 // Initialize game on page load
 document.addEventListener('DOMContentLoaded', () => {
   generateGame();
+  trackGamePlay(); // Track that a game was started
 
   // New game button
   document.getElementById('newGame').addEventListener('click', generateGame);

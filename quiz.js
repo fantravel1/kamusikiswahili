@@ -223,6 +223,11 @@ function showResults() {
   document.getElementById('finalAccuracy').textContent = accuracy + '%';
 
   document.getElementById('resultsModal').classList.remove('hidden');
+
+  // Track quiz completion for achievements
+  const progress = JSON.parse(localStorage.getItem('swahili_progress') || '{}');
+  progress.quizzesCompleted = (progress.quizzesCompleted || 0) + 1;
+  localStorage.setItem('swahili_progress', JSON.stringify(progress));
 }
 
 function restartQuiz() {
