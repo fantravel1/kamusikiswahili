@@ -37,6 +37,14 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- Culture & History Page -->
+    <url>
+        <loc>https://kamusikirswahili.com/culture.html</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Category Deep Links - Core Categories -->
     <url>
         <loc>https://kamusikirswahili.com/?category=family</loc>
