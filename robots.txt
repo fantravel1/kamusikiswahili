@@ -8,6 +8,7 @@ Allow: /quiz.html
 Allow: /game.html
 Allow: /grammar.html
 Allow: /culture.html
+Allow: /conversations.html
 Allow: /manifest.json
 Allow: /service-worker.js
 
