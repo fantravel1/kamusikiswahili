@@ -394,4 +394,36 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Tools & Construction Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=tools</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Law & Government Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=law</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Agriculture & Plants Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=agriculture</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Shopping & Commerce Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=shopping</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
 </urlset>
