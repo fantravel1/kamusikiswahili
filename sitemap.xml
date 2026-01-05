@@ -6,27 +6,369 @@
     <!-- Main Dictionary Page -->
     <url>
         <loc>https://kamusikirswahili.com/</loc>
-        <lastmod>2025-01-17</lastmod>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="sw" href="https://kamusikirswahili.com/" />
         <xhtml:link rel="alternate" hreflang="en" href="https://kamusikirswahili.com/" />
     </url>
 
-    <!-- Quiz Page -->
+    <!-- Quiz & Flashcards Page -->
     <url>
         <loc>https://kamusikirswahili.com/quiz.html</loc>
-        <lastmod>2025-01-17</lastmod>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Matching Game Page -->
+    <url>
+        <loc>https://kamusikirswahili.com/game.html</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Grammar Guide Page -->
+    <url>
+        <loc>https://kamusikirswahili.com/grammar.html</loc>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- Game Page -->
+    <!-- Culture & History Page -->
     <url>
-        <loc>https://kamusikirswahili.com/game.html</loc>
-        <lastmod>2025-01-17</lastmod>
+        <loc>https://kamusikirswahili.com/culture.html</loc>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>
+
+    <!-- Conversations & Dialogues Page -->
+    <url>
+        <loc>https://kamusikirswahili.com/conversations.html</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Category Deep Links - Core Categories -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=family</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=technology</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=business</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=transport</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=food</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=nature</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=health</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=time-numbers</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=colors</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=education</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=emotions</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=verbs</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=greetings</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=animals</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=house</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=clothing</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=adjectives</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=questions</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=days</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=months</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=places</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=weather</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=sports</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- NEW Category Deep Links - Specialized Categories -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=medical</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=legal</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=religion</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=agriculture</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=maritime</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=music-arts</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=construction</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=idioms</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=phrases</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=geography</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=science</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?category=professions</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Popular Word Deep Links -->
+    <url>
+        <loc>https://kamusikirswahili.com/?word=habari</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?word=jambo</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?word=asante</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?word=karibu</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?word=hakuna%20matata</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?word=safari</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?word=simba</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?word=rafiki</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?word=upendo</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://kamusikirswahili.com/?word=amani</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
     </url>
 
 </urlset>

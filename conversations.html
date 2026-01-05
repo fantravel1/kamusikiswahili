@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="sw" itemscope itemtype="https://schema.org/Article">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <!-- SEO Meta Tags -->
+    <title>Swahili Conversations | Practical Dialogues & Phrases for Travelers</title>
+    <meta name="description" content="Learn practical Swahili conversations for everyday situations. Master dialogues for greetings, shopping, restaurants, travel, and more. Perfect for tourists visiting East Africa.">
+    <meta name="keywords" content="swahili conversations, swahili dialogues, swahili for travelers, learn swahili phrases, swahili for tourists, practical swahili, swahili travel phrases">
+    <meta name="author" content="Kamusi Kiswahili">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kamusikirswahili.com/conversations.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Swahili Conversations - Practical Dialogues for Travelers">
+    <meta property="og:description" content="Master everyday Swahili conversations for your East Africa trip.">
+    <meta property="og:url" content="https://kamusikirswahili.com/conversations.html">
+    <meta property="og:type" content="article">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#667eea">
+
+    <style>
+        :root {
+            --bg-gradient-start: #667eea;
+            --bg-gradient-end: #764ba2;
+            --card-bg: #ffffff;
+            --card-text: #333;
+            --accent: #667eea;
+            --accent-light: #f8f9ff;
+            --swahili-color: #2c5530;
+            --english-color: #666;
+        }
+
+        [data-theme="dark"] {
+            --bg-gradient-start: #1a1a2e;
+            --bg-gradient-end: #16213e;
+            --card-bg: #2d2d44;
+            --card-text: #e0e0e0;
+            --accent-light: #3d3d5c;
+            --swahili-color: #7dd87d;
+            --english-color: #b0b0b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            min-height: 100vh;
+            color: var(--card-text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+            padding: 30px 10px;
+        }
+
+        .header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .conversation-section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .conversation-section h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .conversation-section h2 span {
+            font-size: 1.5rem;
+        }
+
+        .dialogue {
+            margin: 20px 0;
+            padding: 20px;
+            background: var(--accent-light);
+            border-radius: 12px;
+        }
+
+        .dialogue-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .dialogue-line {
+            margin: 12px 0;
+            padding: 10px 15px;
+            border-radius: 8px;
+        }
+
+        .speaker-a {
+            background: linear-gradient(135deg, #667eea22, #764ba222);
+            border-left: 3px solid var(--accent);
+        }
+
+        .speaker-b {
+            background: linear-gradient(135deg, #11998e22, #38ef7d22);
+            border-left: 3px solid #11998e;
+            margin-left: 20px;
+        }
+
+        .speaker-label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .speaker-b .speaker-label {
+            color: #11998e;
+        }
+
+        .swahili-text {
+            font-weight: 600;
+            color: var(--swahili-color);
+            font-size: 1.1rem;
+        }
+
+        .english-text {
+            color: var(--english-color);
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-top: 4px;
+        }
+
+        .phrase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .phrase-card {
+            background: var(--accent-light);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .phrase-swahili {
+            font-weight: 600;
+            color: var(--swahili-color);
+            margin-bottom: 5px;
+        }
+
+        .phrase-english {
+            color: var(--english-color);
+            font-size: 0.9rem;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #ff9a5622, #ff6b6b22);
+            border-left: 4px solid #ff6b6b;
+            padding: 15px 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+        }
+
+        .tip-box strong {
+            color: #ff6b6b;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: var(--card-bg);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            font-size: 1.5rem;
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .conversation-section {
+                padding: 20px;
+            }
+            .speaker-b {
+                margin-left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Mazungumzo ya Kiswahili</h1>
+            <p>Practical Swahili Conversations</p>
+        </header>
+
+        <nav class="nav-links">
+            <a href="index.html">Dictionary</a>
+            <a href="grammar.html">Grammar</a>
+            <a href="culture.html">Culture</a>
+            <a href="quiz.html">Quiz</a>
+        </nav>
+
+        <!-- Greetings -->
+        <section class="conversation-section">
+            <h2><span>👋</span> Greetings (Salamu)</h2>
+
+            <div class="dialogue">
+                <div class="dialogue-title">Meeting Someone for the First Time</div>
+
+                <div class="dialogue-line speaker-a">
+                    <div class="speaker-label">Person A:</div>
+                    <div class="swahili-text">Habari! Jina langu ni Maria.</div>
+                    <div class="english-text">Hello! My name is Maria.</div>
+                </div>
+
+                <div class="dialogue-line speaker-b">
+                    <div class="speaker-label">Person B:</div>
+                    <div class="swahili-text">Habari! Mimi ni John. Karibu Tanzania!</div>
+                    <div class="english-text">Hello! I am John. Welcome to Tanzania!</div>
+                </div>
+
+                <div class="dialogue-line speaker-a">
+                    <div class="speaker-label">Person A:</div>
+                    <div class="swahili-text">Asante sana! Nimefurahi kukutana nawe.</div>
+                    <div class="english-text">Thank you very much! Nice to meet you.</div>
+                </div>
+
+                <div class="dialogue-line speaker-b">
+                    <div class="speaker-label">Person B:</div>
+                    <div class="swahili-text">Na mimi pia. Unatoka wapi?</div>
+                    <div class="english-text">Me too. Where are you from?</div>
+                </div>
+
+                <div class="dialogue-line speaker-a">
+                    <div class="speaker-label">Person A:</div>
+                    <div class="swahili-text">Ninatoka Marekani. Na wewe?</div>
+                    <div class="english-text">I'm from America. And you?</div>
+                </div>
+
+                <div class="dialogue-line speaker-b">
+                    <div class="speaker-label">Person B:</div>
+                    <div class="swahili-text">Mimi ni Mtanzania, kutoka Dar es Salaam.</div>
+                    <div class="english-text">I'm Tanzanian, from Dar es Salaam.</div>
+                </div>
+            </div>
+
+            <div class="phrase-grid">
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Habari za asubuhi?</div>
+                    <div class="phrase-english">Good morning?</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Habari za mchana?</div>
+                    <div class="phrase-english">Good afternoon?</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Habari za jioni?</div>
+                    <div class="phrase-english">Good evening?</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">U hali gani?</div>
+                    <div class="phrase-english">How are you?</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Nzuri / Njema</div>
+                    <div class="phrase-english">Fine / Good</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Kwaheri!</div>
+                    <div class="phrase-english">Goodbye!</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- At the Market -->
+        <section class="conversation-section">
+            <h2><span>🛒</span> At the Market (Sokoni)</h2>
+
+            <div class="dialogue">
+                <div class="dialogue-title">Shopping for Fruits</div>
+
+                <div class="dialogue-line speaker-a">
+                    <div class="speaker-label">Customer:</div>
+                    <div class="swahili-text">Habari! Unauzaje maembe?</div>
+                    <div class="english-text">Hello! How much are you selling mangoes for?</div>
+                </div>
+
+                <div class="dialogue-line speaker-b">
+                    <div class="speaker-label">Seller:</div>
+                    <div class="swahili-text">Habari! Maembe ni shilingi elfu mbili kwa kilo.</div>
+                    <div class="english-text">Hello! Mangoes are 2,000 shillings per kilo.</div>
+                </div>
+
+                <div class="dialogue-line speaker-a">
+                    <div class="speaker-label">Customer:</div>
+                    <div class="swahili-text">Ni ghali sana! Unaweza kupunguza bei?</div>
+                    <div class="english-text">That's too expensive! Can you reduce the price?</div>
+                </div>
+
+                <div class="dialogue-line speaker-b">
+                    <div class="speaker-label">Seller:</div>
+                    <div class="swahili-text">Sawa, shilingi elfu moja na mia tano. Bei ya mwisho.</div>
+                    <div class="english-text">Okay, 1,500 shillings. Final price.</div>
+                </div>
+
+                <div class="dialogue-line speaker-a">
+                    <div class="speaker-label">Customer:</div>
+                    <div class="swahili-text">Sawa! Nipe kilo mbili tafadhali.</div>
+                    <div class="english-text">Okay! Give me two kilos please.</div>
+                </div>
+
+                <div class="dialogue-line speaker-b">
+                    <div class="speaker-label">Seller:</div>
+                    <div class="swahili-text">Haya, shilingi elfu tatu. Asante kwa kununua!</div>
+                    <div class="english-text">Here you go, 3,000 shillings. Thanks for buying!</div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>Tip:</strong> Bargaining (kupiga bei) is common and expected at markets in East Africa. Always start lower than your target price!
+            </div>
+
+            <div class="phrase-grid">
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Bei gani?</div>
+                    <div class="phrase-english">What's the price?</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Punguza bei</div>
+                    <div class="phrase-english">Lower the price</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Nataka kununua...</div>
+                    <div class="phrase-english">I want to buy...</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Nipe...</div>
+                    <div class="phrase-english">Give me...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- At the Restaurant -->
+        <section class="conversation-section">
+            <h2><span>🍽️</span> At the Restaurant (Mkahawaini)</h2>
+
+            <div class="dialogue">
+                <div class="dialogue-title">Ordering Food</div>
+
+                <div class="dialogue-line speaker-a">
+                    <div class="speaker-label">Waiter:</div>
+                    <div class="swahili-text">Karibu! Mnapenda kuagiza nini?</div>
+                    <div class="english-text">Welcome! What would you like to order?</div>
+                </div>
+
+                <div class="dialogue-line speaker-b">
+                    <div class="speaker-label">Customer:</div>
+                    <div class="swahili-text">Naomba menyu tafadhali.</div>
+                    <div class="english-text">May I have the menu please.</div>
+                </div>
+
+                <div class="dialogue-line speaker-a">
+                    <div class="speaker-label">Waiter:</div>
+                    <div class="swahili-text">Hii hapa. Chakula cha leo ni pilau na kuku.</div>
+                    <div class="english-text">Here it is. Today's special is pilau with chicken.</div>
+                </div>
+
+                <div class="dialogue-line speaker-b">
+                    <div class="speaker-label">Customer:</div>
+                    <div class="swahili-text">Vizuri! Nitaagiza hiyo. Na maji baridi.</div>
+                    <div class="english-text">Great! I'll order that. And cold water.</div>
+                </div>
+
+                <div class="dialogue-line speaker-a">
+                    <div class="speaker-label">Waiter:</div>
+                    <div class="swahili-text">Sawa. Kitu kingine?</div>
+                    <div class="english-text">Okay. Anything else?</div>
+                </div>
+
+                <div class="dialogue-line speaker-b">
+                    <div class="speaker-label">Customer:</div>
+                    <div class="swahili-text">Hapana, ni hayo tu. Asante!</div>
+                    <div class="english-text">No, that's all. Thank you!</div>
+                </div>
+            </div>
+
+            <div class="phrase-grid">
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Nina njaa</div>
+                    <div class="phrase-english">I'm hungry</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Nina kiu</div>
+                    <div class="phrase-english">I'm thirsty</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Bili tafadhali</div>
+                    <div class="phrase-english">The bill please</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Chakula ni kitamu!</div>
+                    <div class="phrase-english">The food is delicious!</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Getting Directions -->
+        <section class="conversation-section">
+            <h2><span>🗺️</span> Getting Directions (Maelekezo)</h2>
+
+            <div class="dialogue">
+                <div class="dialogue-title">Finding Your Way</div>
+
+                <div class="dialogue-line speaker-a">
+                    <div class="speaker-label">Tourist:</div>
+                    <div class="swahili-text">Samahani, hoteli iko wapi?</div>
+                    <div class="english-text">Excuse me, where is the hotel?</div>
+                </div>
+
+                <div class="dialogue-line speaker-b">
+                    <div class="speaker-label">Local:</div>
+                    <div class="swahili-text">Hoteli? Nenda moja kwa moja, kisha geuka kulia.</div>
+                    <div class="english-text">The hotel? Go straight, then turn right.</div>
+                </div>
+
+                <div class="dialogue-line speaker-a">
+                    <div class="speaker-label">Tourist:</div>
+                    <div class="swahili-text">Iko mbali?</div>
+                    <div class="english-text">Is it far?</div>
+                </div>
+
+                <div class="dialogue-line speaker-b">
+                    <div class="speaker-label">Local:</div>
+                    <div class="swahili-text">Hapana, iko karibu. Dakika tano tu kwa miguu.</div>
+                    <div class="english-text">No, it's nearby. Just five minutes on foot.</div>
+                </div>
+
+                <div class="dialogue-line speaker-a">
+                    <div class="speaker-label">Tourist:</div>
+                    <div class="swahili-text">Asante sana kwa msaada!</div>
+                    <div class="english-text">Thank you very much for the help!</div>
+                </div>
+
+                <div class="dialogue-line speaker-b">
+                    <div class="speaker-label">Local:</div>
+                    <div class="swahili-text">Karibu! Safari njema!</div>
+                    <div class="english-text">You're welcome! Safe journey!</div>
+                </div>
+            </div>
+
+            <div class="phrase-grid">
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Kulia</div>
+                    <div class="phrase-english">Right</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Kushoto</div>
+                    <div class="phrase-english">Left</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Moja kwa moja</div>
+                    <div class="phrase-english">Straight ahead</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Nyuma</div>
+                    <div class="phrase-english">Behind/Back</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Karibu na...</div>
+                    <div class="phrase-english">Near/Close to...</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Mbele</div>
+                    <div class="phrase-english">In front/Ahead</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transportation -->
+        <section class="conversation-section">
+            <h2><span>🚕</span> Transportation (Usafiri)</h2>
+
+            <div class="dialogue">
+                <div class="dialogue-title">Taking a Taxi</div>
+
+                <div class="dialogue-line speaker-a">
+                    <div class="speaker-label">Passenger:</div>
+                    <div class="swahili-text">Hujambo! Unaweza kunipeleka uwanja wa ndege?</div>
+                    <div class="english-text">Hello! Can you take me to the airport?</div>
+                </div>
+
+                <div class="dialogue-line speaker-b">
+                    <div class="speaker-label">Driver:</div>
+                    <div class="swahili-text">Ndio, ninaweza. Shilingi elfu ishirini.</div>
+                    <div class="english-text">Yes, I can. Twenty thousand shillings.</div>
+                </div>
+
+                <div class="dialogue-line speaker-a">
+                    <div class="speaker-label">Passenger:</div>
+                    <div class="swahili-text">Sawa. Tutafika saa ngapi?</div>
+                    <div class="english-text">Okay. What time will we arrive?</div>
+                </div>
+
+                <div class="dialogue-line speaker-b">
+                    <div class="speaker-label">Driver:</div>
+                    <div class="swahili-text">Kama dakika arobaini, kulingana na msongamano.</div>
+                    <div class="english-text">About forty minutes, depending on traffic.</div>
+                </div>
+
+                <div class="dialogue-line speaker-a">
+                    <div class="speaker-label">Passenger:</div>
+                    <div class="swahili-text">Sawa, tuende!</div>
+                    <div class="english-text">Okay, let's go!</div>
+                </div>
+            </div>
+
+            <div class="phrase-grid">
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Nataka kwenda...</div>
+                    <div class="phrase-english">I want to go to...</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Simama hapa</div>
+                    <div class="phrase-english">Stop here</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Haraka tafadhali</div>
+                    <div class="phrase-english">Quickly please</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Pole pole</div>
+                    <div class="phrase-english">Slowly</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency -->
+        <section class="conversation-section">
+            <h2><span>🆘</span> Emergency Phrases (Dharura)</h2>
+
+            <div class="phrase-grid">
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Nisaidie!</div>
+                    <div class="phrase-english">Help me!</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Ninahitaji daktari</div>
+                    <div class="phrase-english">I need a doctor</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Piga simu polisi!</div>
+                    <div class="phrase-english">Call the police!</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Hospitali iko wapi?</div>
+                    <div class="phrase-english">Where is the hospital?</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Nimepotea</div>
+                    <div class="phrase-english">I'm lost</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Naumwa</div>
+                    <div class="phrase-english">I'm sick/in pain</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Moto! Moto!</div>
+                    <div class="phrase-english">Fire! Fire!</div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-swahili">Mwizi!</div>
+                    <div class="phrase-english">Thief!</div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>Important Numbers:</strong><br>
+                Police: 112 or 999<br>
+                Ambulance: 114<br>
+                Fire: 114
+            </div>
+        </section>
+
+        <div class="conversation-section" style="text-align: center;">
+            <h2>Practice More!</h2>
+            <p>Test your conversation skills with our interactive learning tools:</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+                <a href="index.html" style="background: var(--accent); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold;">Dictionary</a>
+                <a href="quiz.html" style="background: #11998e; color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold;">Quiz</a>
+                <a href="game.html" style="background: #764ba2; color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold;">Game</a>
+            </div>
+        </div>
+    </div>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span id="themeIcon">&#127769;</span>
+    </button>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        function updateThemeIcon(theme) {
+            themeIcon.innerHTML = theme === 'dark' ? '&#9728;' : '&#127769;';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+    </script>
+</body>
+</html>
