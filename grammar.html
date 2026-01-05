@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="sw" itemscope itemtype="https://schema.org/Article">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <!-- SEO Meta Tags -->
+    <title>Swahili Grammar Guide | Learn Kiswahili Grammar Rules & Verb Conjugation</title>
+    <meta name="description" content="Complete Swahili grammar guide covering noun classes, verb conjugation, tenses, sentence structure, and more. Free interactive Kiswahili grammar lessons for beginners to advanced learners.">
+    <meta name="keywords" content="swahili grammar, kiswahili grammar, swahili verb conjugation, swahili noun classes, learn swahili grammar, swahili tenses, swahili sentence structure">
+    <meta name="author" content="Kamusi Kiswahili">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kamusikirswahili.com/grammar.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Swahili Grammar Guide - Complete Kiswahili Grammar Reference">
+    <meta property="og:description" content="Master Swahili grammar with comprehensive lessons on noun classes, verb conjugation, tenses, and sentence structure.">
+    <meta property="og:url" content="https://kamusikirswahili.com/grammar.html">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Swahili Grammar Guide">
+    <meta name="twitter:description" content="Complete Swahili grammar reference for all levels">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#667eea">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Complete Swahili Grammar Guide",
+        "description": "Comprehensive guide to Swahili grammar including noun classes, verb conjugation, tenses, and sentence structure",
+        "author": {
+            "@type": "Organization",
+            "name": "Kamusi Kiswahili"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Kamusi Kiswahili"
+        },
+        "inLanguage": ["sw", "en"],
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Kamusi ya Kiswahili",
+            "url": "https://kamusikirswahili.com"
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-gradient-start: #667eea;
+            --bg-gradient-end: #764ba2;
+            --card-bg: #ffffff;
+            --card-text: #333;
+            --accent: #667eea;
+            --accent-light: #f8f9ff;
+        }
+
+        [data-theme="dark"] {
+            --bg-gradient-start: #1a1a2e;
+            --bg-gradient-end: #16213e;
+            --card-bg: #2d2d44;
+            --card-text: #e0e0e0;
+            --accent-light: #3d3d5c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            min-height: 100vh;
+            color: var(--card-text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+            padding: 30px 10px;
+        }
+
+        .header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .grammar-section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .grammar-section h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--accent);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .grammar-section h3 {
+            color: var(--card-text);
+            margin: 20px 0 10px;
+        }
+
+        .grammar-section p {
+            margin-bottom: 15px;
+        }
+
+        .example-box {
+            background: var(--accent-light);
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .example-box .swahili {
+            font-weight: 600;
+            color: #2c5530;
+            font-size: 1.1rem;
+        }
+
+        .example-box .english {
+            color: #666;
+            font-style: italic;
+        }
+
+        [data-theme="dark"] .example-box .swahili {
+            color: #7dd87d;
+        }
+
+        [data-theme="dark"] .example-box .english {
+            color: #b0b0b0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: var(--accent);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: var(--accent-light);
+        }
+
+        .conjugation-table {
+            overflow-x: auto;
+        }
+
+        .toc {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .toc h2 {
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            margin: 8px 0;
+        }
+
+        .toc a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: var(--card-bg);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            font-size: 1.5rem;
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .grammar-section {
+                padding: 20px;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Sarufi ya Kiswahili</h1>
+            <p>Complete Swahili Grammar Guide</p>
+        </header>
+
+        <nav class="nav-links">
+            <a href="index.html">Dictionary</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="game.html">Game</a>
+        </nav>
+
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#introduction">1. Introduction to Swahili</a></li>
+                <li><a href="#alphabet">2. Alphabet & Pronunciation</a></li>
+                <li><a href="#noun-classes">3. Noun Classes (Ngeli)</a></li>
+                <li><a href="#pronouns">4. Personal Pronouns</a></li>
+                <li><a href="#verbs">5. Verb Conjugation</a></li>
+                <li><a href="#tenses">6. Tenses</a></li>
+                <li><a href="#sentence-structure">7. Sentence Structure</a></li>
+                <li><a href="#adjectives">8. Adjectives & Agreement</a></li>
+                <li><a href="#questions">9. Forming Questions</a></li>
+                <li><a href="#negation">10. Negation</a></li>
+            </ul>
+        </div>
+
+        <section id="introduction" class="grammar-section">
+            <h2>1. Introduction to Swahili (Kiswahili)</h2>
+            <p>Swahili, known natively as <strong>Kiswahili</strong>, is a Bantu language spoken by over 100 million people across East Africa. It's the official language of Tanzania, Kenya, and Uganda, and serves as a lingua franca throughout the region.</p>
+            <p>Key characteristics of Swahili:</p>
+            <ul>
+                <li>Uses the Latin alphabet (no special characters needed)</li>
+                <li>Highly phonetic - words are pronounced as written</li>
+                <li>Agglutinative language - prefixes and suffixes modify meaning</li>
+                <li>Uses noun classes instead of gender</li>
+                <li>Subject-Verb-Object (SVO) word order</li>
+            </ul>
+        </section>
+
+        <section id="alphabet" class="grammar-section">
+            <h2>2. Alphabet & Pronunciation</h2>
+            <p>Swahili uses 24 letters of the Latin alphabet. The letters Q and X are not used.</p>
+
+            <h3>Vowels (Vokali)</h3>
+            <p>Swahili has 5 pure vowels, each with one consistent sound:</p>
+            <table>
+                <tr><th>Letter</th><th>Sound</th><th>Example</th></tr>
+                <tr><td>A</td><td>"ah" as in "father"</td><td>baba (father)</td></tr>
+                <tr><td>E</td><td>"eh" as in "bed"</td><td>mwezi (month)</td></tr>
+                <tr><td>I</td><td>"ee" as in "see"</td><td>sisi (we)</td></tr>
+                <tr><td>O</td><td>"oh" as in "go"</td><td>moto (fire)</td></tr>
+                <tr><td>U</td><td>"oo" as in "moon"</td><td>kuku (chicken)</td></tr>
+            </table>
+
+            <h3>Special Consonant Combinations</h3>
+            <table>
+                <tr><th>Letters</th><th>Sound</th><th>Example</th></tr>
+                <tr><td>CH</td><td>"ch" as in "church"</td><td>chakula (food)</td></tr>
+                <tr><td>DH</td><td>"th" as in "this"</td><td>dhambi (sin)</td></tr>
+                <tr><td>GH</td><td>soft guttural "g"</td><td>ghali (expensive)</td></tr>
+                <tr><td>NG'</td><td>"ng" as in "singer"</td><td>ng'ombe (cow)</td></tr>
+                <tr><td>NY</td><td>"ny" as in "canyon"</td><td>nyumba (house)</td></tr>
+                <tr><td>SH</td><td>"sh" as in "ship"</td><td>shule (school)</td></tr>
+                <tr><td>TH</td><td>"th" as in "think"</td><td>thelathini (thirty)</td></tr>
+            </table>
+        </section>
+
+        <section id="noun-classes" class="grammar-section">
+            <h2>3. Noun Classes (Ngeli)</h2>
+            <p>Swahili has 18 noun classes, but learners typically focus on the most common ones. Noun classes affect prefixes on nouns, adjectives, and verbs.</p>
+
+            <h3>Main Noun Classes</h3>
+            <table>
+                <tr><th>Class</th><th>Singular</th><th>Plural</th><th>Examples</th></tr>
+                <tr><td>M-WA (People)</td><td>m-</td><td>wa-</td><td>mtu/watu (person/people)</td></tr>
+                <tr><td>M-MI (Trees/Plants)</td><td>m-</td><td>mi-</td><td>mti/miti (tree/trees)</td></tr>
+                <tr><td>KI-VI (Things)</td><td>ki-</td><td>vi-</td><td>kiti/viti (chair/chairs)</td></tr>
+                <tr><td>N-N (Various)</td><td>n-</td><td>n-</td><td>nyumba/nyumba (house/houses)</td></tr>
+                <tr><td>JI-MA (Fruits/Large things)</td><td>ji-/0</td><td>ma-</td><td>jicho/macho (eye/eyes)</td></tr>
+                <tr><td>U (Abstract)</td><td>u-</td><td>-</td><td>uzuri (beauty)</td></tr>
+            </table>
+
+            <div class="example-box">
+                <p class="swahili">Mtoto mdogo anacheza.</p>
+                <p class="english">The small child is playing.</p>
+                <p><small>Note: "mdogo" agrees with M-WA class</small></p>
+            </div>
+        </section>
+
+        <section id="pronouns" class="grammar-section">
+            <h2>4. Personal Pronouns (Viwakilishi)</h2>
+
+            <table>
+                <tr><th>English</th><th>Swahili</th><th>Subject Prefix</th></tr>
+                <tr><td>I</td><td>Mimi</td><td>ni-</td></tr>
+                <tr><td>You (singular)</td><td>Wewe</td><td>u-</td></tr>
+                <tr><td>He/She</td><td>Yeye</td><td>a-</td></tr>
+                <tr><td>We</td><td>Sisi</td><td>tu-</td></tr>
+                <tr><td>You (plural)</td><td>Ninyi</td><td>m-</td></tr>
+                <tr><td>They</td><td>Wao</td><td>wa-</td></tr>
+            </table>
+
+            <div class="example-box">
+                <p class="swahili">Mimi ni mwalimu. / Ninasoma kitabu.</p>
+                <p class="english">I am a teacher. / I am reading a book.</p>
+            </div>
+        </section>
+
+        <section id="verbs" class="grammar-section">
+            <h2>5. Verb Conjugation (Vitenzi)</h2>
+            <p>Swahili verbs follow a consistent pattern: <strong>Subject Prefix + Tense Marker + Verb Root + Ending</strong></p>
+
+            <h3>The Verb "Kusoma" (to read)</h3>
+            <div class="conjugation-table">
+                <table>
+                    <tr><th>Pronoun</th><th>Present (na-)</th><th>Past (li-)</th><th>Future (ta-)</th></tr>
+                    <tr><td>Mimi</td><td>ninasoma</td><td>nilisoma</td><td>nitasoma</td></tr>
+                    <tr><td>Wewe</td><td>unasoma</td><td>ulisoma</td><td>utasoma</td></tr>
+                    <tr><td>Yeye</td><td>anasoma</td><td>alisoma</td><td>atasoma</td></tr>
+                    <tr><td>Sisi</td><td>tunasoma</td><td>tulisoma</td><td>tutasoma</td></tr>
+                    <tr><td>Ninyi</td><td>mnasoma</td><td>mlisoma</td><td>mtasoma</td></tr>
+                    <tr><td>Wao</td><td>wanasoma</td><td>walisoma</td><td>watasoma</td></tr>
+                </table>
+            </div>
+
+            <h3>Common Verb Roots</h3>
+            <table>
+                <tr><th>Infinitive</th><th>Root</th><th>Meaning</th></tr>
+                <tr><td>kusoma</td><td>-soma</td><td>to read</td></tr>
+                <tr><td>kuandika</td><td>-andika</td><td>to write</td></tr>
+                <tr><td>kula</td><td>-la</td><td>to eat</td></tr>
+                <tr><td>kunywa</td><td>-nywa</td><td>to drink</td></tr>
+                <tr><td>kwenda</td><td>-enda</td><td>to go</td></tr>
+                <tr><td>kuja</td><td>-ja</td><td>to come</td></tr>
+                <tr><td>kusema</td><td>-sema</td><td>to say/speak</td></tr>
+                <tr><td>kufanya</td><td>-fanya</td><td>to do/make</td></tr>
+            </table>
+        </section>
+
+        <section id="tenses" class="grammar-section">
+            <h2>6. Tenses (Nyakati)</h2>
+
+            <h3>Tense Markers</h3>
+            <table>
+                <tr><th>Tense</th><th>Marker</th><th>Example</th></tr>
+                <tr><td>Present Progressive</td><td>-na-</td><td>Ninasoma (I am reading)</td></tr>
+                <tr><td>Past</td><td>-li-</td><td>Nilisoma (I read)</td></tr>
+                <tr><td>Future</td><td>-ta-</td><td>Nitasoma (I will read)</td></tr>
+                <tr><td>Perfect</td><td>-me-</td><td>Nimesoma (I have read)</td></tr>
+                <tr><td>Habitual</td><td>-hu-</td><td>Husoma (I usually read)</td></tr>
+                <tr><td>Conditional</td><td>-nge-</td><td>Ningesoma (I would read)</td></tr>
+            </table>
+
+            <div class="example-box">
+                <p class="swahili">Nimekwisha kula. / Sitakuja kesho.</p>
+                <p class="english">I have already eaten. / I will not come tomorrow.</p>
+            </div>
+        </section>
+
+        <section id="sentence-structure" class="grammar-section">
+            <h2>7. Sentence Structure</h2>
+            <p>Basic Swahili follows Subject-Verb-Object (SVO) order, similar to English:</p>
+
+            <div class="example-box">
+                <p class="swahili">Juma anasoma kitabu.</p>
+                <p class="english">Juma is reading a book.</p>
+                <p><small>Subject (Juma) + Verb (anasoma) + Object (kitabu)</small></p>
+            </div>
+
+            <h3>The Verb "To Be" (Kuwa)</h3>
+            <p>Present tense "to be" is often expressed with <strong>ni</strong> (am/is/are):</p>
+            <div class="example-box">
+                <p class="swahili">Mimi ni mwanafunzi. / Yeye ni daktari.</p>
+                <p class="english">I am a student. / He/She is a doctor.</p>
+            </div>
+
+            <h3>Possessive Constructions</h3>
+            <table>
+                <tr><th>Possessive</th><th>M-WA class</th><th>KI-VI class</th></tr>
+                <tr><td>my</td><td>wangu</td><td>changu</td></tr>
+                <tr><td>your (sg)</td><td>wako</td><td>chako</td></tr>
+                <tr><td>his/her</td><td>wake</td><td>chake</td></tr>
+                <tr><td>our</td><td>wetu</td><td>chetu</td></tr>
+                <tr><td>your (pl)</td><td>wenu</td><td>chenu</td></tr>
+                <tr><td>their</td><td>wao</td><td>chao</td></tr>
+            </table>
+        </section>
+
+        <section id="adjectives" class="grammar-section">
+            <h2>8. Adjectives & Agreement (Vivumishi)</h2>
+            <p>Adjectives in Swahili must agree with the noun class of the word they describe:</p>
+
+            <h3>Common Adjectives</h3>
+            <table>
+                <tr><th>Root</th><th>Meaning</th><th>M-WA Example</th><th>KI-VI Example</th></tr>
+                <tr><td>-zuri</td><td>good/beautiful</td><td>mtu mzuri</td><td>kitu kizuri</td></tr>
+                <tr><td>-baya</td><td>bad</td><td>mtu mbaya</td><td>kitu kibaya</td></tr>
+                <tr><td>-kubwa</td><td>big</td><td>mtu mkubwa</td><td>kitu kikubwa</td></tr>
+                <tr><td>-dogo</td><td>small</td><td>mtu mdogo</td><td>kitu kidogo</td></tr>
+                <tr><td>-refu</td><td>tall/long</td><td>mtu mrefu</td><td>kitu kirefu</td></tr>
+            </table>
+
+            <div class="example-box">
+                <p class="swahili">Nyumba nzuri. / Watoto wadogo wanacheza.</p>
+                <p class="english">A beautiful house. / The small children are playing.</p>
+            </div>
+        </section>
+
+        <section id="questions" class="grammar-section">
+            <h2>9. Forming Questions (Maswali)</h2>
+
+            <h3>Question Words</h3>
+            <table>
+                <tr><th>Swahili</th><th>English</th><th>Example</th></tr>
+                <tr><td>Nani?</td><td>Who?</td><td>Nani anakuja? (Who is coming?)</td></tr>
+                <tr><td>Nini?</td><td>What?</td><td>Unafanya nini? (What are you doing?)</td></tr>
+                <tr><td>Wapi?</td><td>Where?</td><td>Unakwenda wapi? (Where are you going?)</td></tr>
+                <tr><td>Lini?</td><td>When?</td><td>Utakuja lini? (When will you come?)</td></tr>
+                <tr><td>Kwa nini?</td><td>Why?</td><td>Kwa nini unalia? (Why are you crying?)</td></tr>
+                <tr><td>Vipi? / Namna gani?</td><td>How?</td><td>Unajisikiaje? (How do you feel?)</td></tr>
+                <tr><td>Ngapi?</td><td>How many?</td><td>Watoto wangapi? (How many children?)</td></tr>
+            </table>
+
+            <h3>Yes/No Questions</h3>
+            <p>Yes/No questions are formed by raising intonation at the end, or by adding "Je" at the beginning:</p>
+            <div class="example-box">
+                <p class="swahili">Je, unasema Kiswahili? / Unakuja?</p>
+                <p class="english">Do you speak Swahili? / Are you coming?</p>
+            </div>
+        </section>
+
+        <section id="negation" class="grammar-section">
+            <h2>10. Negation (Ukanushaji)</h2>
+            <p>Negation in Swahili changes based on tense and subject:</p>
+
+            <h3>Present Tense Negation</h3>
+            <p>Use <strong>ha-</strong> prefix + subject marker + verb (no -na-):</p>
+            <div class="example-box">
+                <p class="swahili">Sisomi. / Hasomi. / Hatusomi.</p>
+                <p class="english">I don't read. / He/She doesn't read. / We don't read.</p>
+            </div>
+
+            <h3>Negative Subject Prefixes</h3>
+            <table>
+                <tr><th>Positive</th><th>Negative</th><th>Example</th></tr>
+                <tr><td>ni- (I)</td><td>si-</td><td>Sisemi (I don't speak)</td></tr>
+                <tr><td>u- (you)</td><td>hu-</td><td>Husemi (You don't speak)</td></tr>
+                <tr><td>a- (he/she)</td><td>ha-</td><td>Hasemi (He/She doesn't speak)</td></tr>
+                <tr><td>tu- (we)</td><td>hatu-</td><td>Hatusemi (We don't speak)</td></tr>
+                <tr><td>m- (you pl)</td><td>ham-</td><td>Hamsemi (You all don't speak)</td></tr>
+                <tr><td>wa- (they)</td><td>hawa-</td><td>Hawasemi (They don't speak)</td></tr>
+            </table>
+
+            <h3>Past & Future Negation</h3>
+            <table>
+                <tr><th>Tense</th><th>Marker</th><th>Example</th></tr>
+                <tr><td>Past Negative</td><td>-ku-</td><td>Sikukuja (I didn't come)</td></tr>
+                <tr><td>Future Negative</td><td>-ta- + ending -i</td><td>Sitakuja (I won't come)</td></tr>
+                <tr><td>Perfect Negative</td><td>-ja-</td><td>Sijala (I haven't eaten)</td></tr>
+            </table>
+        </section>
+
+        <div class="grammar-section" style="text-align: center;">
+            <h2>Continue Learning</h2>
+            <p>Practice your Swahili with our interactive tools:</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+                <a href="index.html" style="background: var(--accent); color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold;">Browse Dictionary</a>
+                <a href="quiz.html" style="background: #11998e; color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold;">Take a Quiz</a>
+                <a href="game.html" style="background: #764ba2; color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold;">Play Game</a>
+            </div>
+        </div>
+    </div>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span id="themeIcon">&#127769;</span>
+    </button>
+
+    <script>
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        function updateThemeIcon(theme) {
+            themeIcon.innerHTML = theme === 'dark' ? '&#9728;' : '&#127769;';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        // Smooth scroll for TOC links
+        document.querySelectorAll('.toc a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
