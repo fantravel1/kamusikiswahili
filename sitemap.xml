@@ -426,4 +426,36 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Communication & Media Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=communication</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Materials & Textures Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=materials</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Marine & Ocean Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=marine</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Celebrations & Ceremonies Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=celebrations</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
 </urlset>
