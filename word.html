@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="sw" itemscope itemtype="https://schema.org/DefinedTerm">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <!-- Dynamic SEO Meta Tags (Updated by JavaScript) -->
+    <title>Swahili Word | Kamusi ya Kiswahili</title>
+    <meta name="description" content="Learn the meaning, etymology, and cultural significance of this Swahili word with translations in English, French, Spanish, and German.">
+    <meta name="keywords" content="swahili word, kiswahili, swahili translation, swahili etymology, east africa language">
+    <meta name="author" content="Kamusi Kiswahili">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kamusikirswahili.com/word.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Swahili Word | Kamusi ya Kiswahili">
+    <meta property="og:description" content="Learn the meaning, etymology, and cultural significance of this Swahili word.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://kamusikirswahili.com/word.html">
+    <meta property="og:site_name" content="Kamusi ya Kiswahili">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Swahili Word | Kamusi ya Kiswahili">
+    <meta name="twitter:description" content="Learn the meaning, etymology, and cultural significance of this Swahili word.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📖%3C/text%3E%3C/svg%3E">
+
+    <meta name="theme-color" content="#667eea">
+
+    <style>
+        :root {
+            --bg-gradient-start: #667eea;
+            --bg-gradient-end: #764ba2;
+            --card-bg: #ffffff;
+            --card-text: #333;
+            --text-muted: #666;
+            --border-color: #e0e0e0;
+            --accent-color: #667eea;
+            --accent-secondary: #764ba2;
+        }
+
+        [data-theme="dark"] {
+            --bg-gradient-start: #1a1a2e;
+            --bg-gradient-end: #16213e;
+            --card-bg: #2d2d44;
+            --card-text: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-color: #3d3d5c;
+            --accent-color: #8b9cf4;
+            --accent-secondary: #a07cd6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            min-height: 100vh;
+            color: var(--card-text);
+            transition: background 0.3s ease;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateX(-4px);
+        }
+
+        .theme-toggle {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+
+        /* Main Word Card */
+        .word-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .word-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+        }
+
+        .word-category {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .main-word {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .pronunciation {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .pronunciation-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 24px;
+        }
+
+        .pronunciation-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .definition {
+            font-size: 1.3rem;
+            color: var(--card-text);
+            max-width: 600px;
+            margin: 0 auto 24px;
+            line-height: 1.6;
+        }
+
+        .example-sentence {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 16px 24px;
+            border-radius: 12px;
+            font-style: italic;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .example-sentence strong {
+            color: var(--accent-color);
+        }
+
+        /* Section Cards */
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Translations Grid */
+        .translations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .translation-item {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .translation-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .translation-flag {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .translation-lang {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .translation-word {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--card-text);
+        }
+
+        /* Cultural Section */
+        .cultural-content {
+            line-height: 1.8;
+            color: var(--card-text);
+        }
+
+        .cultural-content p {
+            margin-bottom: 16px;
+        }
+
+        .cultural-highlight {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-color);
+            margin: 20px 0;
+        }
+
+        .country-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .country-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Etymology Section */
+        .etymology-content {
+            line-height: 1.8;
+        }
+
+        .etymology-origin {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+            color: white;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        .etymology-tree {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 12px;
+        }
+
+        .etymology-step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .etymology-step::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 12px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+
+        .etymology-step:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Related Words */
+        .related-words-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 16px;
+        }
+
+        .related-word-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-word-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+        }
+
+        .related-swahili {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 4px;
+        }
+
+        .related-english {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .related-category {
+            font-size: 0.75rem;
+            color: var(--accent-secondary);
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Not Found State */
+        .not-found {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--card-bg);
+            border-radius: 24px;
+            margin: 40px 0;
+        }
+
+        .not-found-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .not-found h2 {
+            color: var(--card-text);
+            margin-bottom: 12px;
+        }
+
+        .not-found p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .search-link {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .search-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Footer */
+        .page-footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .page-footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 16px;
+            }
+
+            .word-card, .section-card {
+                padding: 24px;
+            }
+
+            .translations-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .related-words-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="page-header">
+            <a href="index.html" class="back-link">
+                <span>&#8592;</span> Kamusi ya Kiswahili
+            </a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <span id="themeIcon">&#9790;</span>
+            </button>
+        </header>
+
+        <!-- Main Content -->
+        <main id="mainContent">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p>Inapakia neno... (Loading word...)</p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <p>&#169; 2025 <a href="index.html">Kamusi ya Kiswahili</a> - Your Complete Swahili Dictionary</p>
+        </footer>
+    </div>
+
+    <!-- Word Data -->
+    <script src="word-data.js"></script>
+
+    <script>
+        // Theme Management
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+
+        function setTheme(isDark) {
+            document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            themeIcon.innerHTML = isDark ? '&#9788;' : '&#9790;';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setTheme(savedTheme === 'dark' || (!savedTheme && prefersDark));
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') !== 'dark';
+            setTheme(isDark);
+        });
+
+        // Text-to-Speech
+        function speakWord(word) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(word);
+                utterance.lang = 'sw-KE';
+                utterance.rate = 0.8;
+                speechSynthesis.speak(utterance);
+            }
+        }
+
+        // Get word from URL
+        function getWordFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('w') || params.get('word');
+        }
+
+        // Render word page
+        function renderWordPage(wordKey) {
+            const mainContent = document.getElementById('mainContent');
+
+            if (!wordKey) {
+                renderNotFound(mainContent);
+                return;
+            }
+
+            // Find word in database (case-insensitive)
+            const normalizedKey = wordKey.toLowerCase().trim();
+            const wordData = window.WORD_DATABASE ? window.WORD_DATABASE[normalizedKey] : null;
+
+            if (!wordData) {
+                renderNotFound(mainContent, wordKey);
+                return;
+            }
+
+            // Update page title and meta
+            document.title = `${wordData.swahili} - ${wordData.english} | Kamusi ya Kiswahili`;
+            document.querySelector('meta[name="description"]').content =
+                `Learn "${wordData.swahili}" meaning "${wordData.english}" in Swahili. Includes French, Spanish, German translations, etymology, and cultural context from East Africa.`;
+
+            // Render the word page
+            mainContent.innerHTML = `
+                <!-- Main Word Card -->
+                <article class="word-card">
+                    <span class="word-category">${wordData.category}</span>
+                    <h1 class="main-word">${wordData.swahili}</h1>
+                    <p class="pronunciation">[${wordData.pronunciation || wordData.swahili.toLowerCase()}]</p>
+                    <button class="pronunciation-btn" onclick="speakWord('${wordData.swahili}')">
+                        &#128266; Sikia Matamshi (Listen)
+                    </button>
+                    <p class="definition">${wordData.english}</p>
+                    ${wordData.example ? `
+                        <div class="example-sentence">
+                            <strong>${wordData.example.swahili}</strong><br>
+                            <span>${wordData.example.english}</span>
+                        </div>
+                    ` : ''}
+                </article>
+
+                <!-- Translations Section -->
+                <section class="section-card">
+                    <h2 class="section-title">
+                        <span class="section-icon">&#127760;</span>
+                        Tafsiri (Translations)
+                    </h2>
+                    <div class="translations-grid">
+                        <div class="translation-item">
+                            <div class="translation-flag">&#127468;&#127463;</div>
+                            <div class="translation-lang">English</div>
+                            <div class="translation-word">${wordData.english}</div>
+                        </div>
+                        <div class="translation-item">
+                            <div class="translation-flag">&#127467;&#127479;</div>
+                            <div class="translation-lang">French</div>
+                            <div class="translation-word">${wordData.translations?.french || 'N/A'}</div>
+                        </div>
+                        <div class="translation-item">
+                            <div class="translation-flag">&#127466;&#127480;</div>
+                            <div class="translation-lang">Spanish</div>
+                            <div class="translation-word">${wordData.translations?.spanish || 'N/A'}</div>
+                        </div>
+                        <div class="translation-item">
+                            <div class="translation-flag">&#127465;&#127466;</div>
+                            <div class="translation-lang">German</div>
+                            <div class="translation-word">${wordData.translations?.german || 'N/A'}</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cultural Context Section -->
+                <section class="section-card">
+                    <h2 class="section-title">
+                        <span class="section-icon">&#127758;</span>
+                        Muktadha wa Kitamaduni (Cultural Context)
+                    </h2>
+                    <div class="cultural-content">
+                        ${wordData.culturalContext ? `
+                            <p>${wordData.culturalContext}</p>
+                            ${wordData.culturalHighlight ? `
+                                <div class="cultural-highlight">
+                                    ${wordData.culturalHighlight}
+                                </div>
+                            ` : ''}
+                        ` : `<p>This word is commonly used across Swahili-speaking countries in East Africa including Tanzania, Kenya, Uganda, Rwanda, Burundi, DRC, and parts of Mozambique.</p>`}
+                        <div class="country-tags">
+                            ${(wordData.countries || ['Tanzania', 'Kenya', 'Uganda']).map(country =>
+                                `<span class="country-tag">${getCountryFlag(country)} ${country}</span>`
+                            ).join('')}
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Etymology Section -->
+                <section class="section-card">
+                    <h2 class="section-title">
+                        <span class="section-icon">&#128214;</span>
+                        Asili ya Neno (Etymology & Origin)
+                    </h2>
+                    <div class="etymology-content">
+                        ${wordData.etymology ? `
+                            <p>
+                                <span class="etymology-origin">${wordData.etymology.origin}</span>
+                                ${wordData.etymology.description}
+                            </p>
+                            ${wordData.etymology.tree ? `
+                                <div class="etymology-tree">
+                                    ${wordData.etymology.tree.map(step =>
+                                        `<div class="etymology-step">${step}</div>`
+                                    ).join('')}
+                                </div>
+                            ` : ''}
+                        ` : `
+                            <p>
+                                <span class="etymology-origin">Bantu Origin</span>
+                                This word derives from the Bantu language family, the foundation of Swahili. Swahili (Kiswahili) developed as a lingua franca along the East African coast, blending Bantu roots with Arabic, Persian, Portuguese, and English influences through centuries of trade.
+                            </p>
+                        `}
+                    </div>
+                </section>
+
+                <!-- Related Words Section -->
+                <section class="section-card">
+                    <h2 class="section-title">
+                        <span class="section-icon">&#128279;</span>
+                        Maneno Yanayohusiana (Related Words)
+                    </h2>
+                    <div class="related-words-grid" id="relatedWords">
+                        ${renderRelatedWords(wordData)}
+                    </div>
+                </section>
+            `;
+        }
+
+        function getCountryFlag(country) {
+            const flags = {
+                'Tanzania': '&#127481;&#127487;',
+                'Kenya': '&#127472;&#127466;',
+                'Uganda': '&#127482;&#127468;',
+                'Rwanda': '&#127479;&#127484;',
+                'Burundi': '&#127463;&#127470;',
+                'DRC': '&#127464;&#127465;',
+                'Mozambique': '&#127474;&#127487;',
+                'Comoros': '&#127472;&#127474;'
+            };
+            return flags[country] || '&#127758;';
+        }
+
+        function renderRelatedWords(wordData) {
+            const related = wordData.relatedWords || [];
+
+            if (related.length === 0) {
+                // Get random words from same category as fallback
+                const categoryWords = Object.values(window.WORD_DATABASE || {})
+                    .filter(w => w.category === wordData.category && w.swahili !== wordData.swahili)
+                    .slice(0, 6);
+
+                if (categoryWords.length > 0) {
+                    return categoryWords.map(w => `
+                        <a href="word.html?w=${encodeURIComponent(w.swahili.toLowerCase())}" class="related-word-card">
+                            <div class="related-swahili">${w.swahili}</div>
+                            <div class="related-english">${w.english}</div>
+                            <div class="related-category">${w.category}</div>
+                        </a>
+                    `).join('');
+                }
+            }
+
+            return related.map(w => {
+                const relatedData = window.WORD_DATABASE ? window.WORD_DATABASE[w.toLowerCase()] : null;
+                return `
+                    <a href="word.html?w=${encodeURIComponent(w.toLowerCase())}" class="related-word-card">
+                        <div class="related-swahili">${w}</div>
+                        <div class="related-english">${relatedData?.english || ''}</div>
+                        <div class="related-category">${relatedData?.category || ''}</div>
+                    </a>
+                `;
+            }).join('');
+        }
+
+        function renderNotFound(container, searchedWord) {
+            container.innerHTML = `
+                <div class="not-found">
+                    <div class="not-found-icon">&#128269;</div>
+                    <h2>Neno Halijapatikana (Word Not Found)</h2>
+                    <p>${searchedWord ? `We couldn't find "${searchedWord}" in our dictionary.` : 'No word was specified.'}</p>
+                    <a href="index.html" class="search-link">&#128270; Tafuta Maneno (Search Words)</a>
+                </div>
+            `;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            const word = getWordFromURL();
+            renderWordPage(word);
+        });
+    </script>
+</body>
+</html>

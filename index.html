@@ -8108,6 +8108,7 @@
             item.addEventListener('click', function() {
                 const modal = document.createElement('div');
                 modal.className = 'pronunciation-modal';
+                const wordSlug = swahiliWord.toLowerCase().replace(/\s+/g, '-');
                 modal.innerHTML = `
                     <div class="pronunciation-content">
                         <button class="close-modal" onclick="this.parentElement.parentElement.remove()">✕</button>
@@ -8121,6 +8122,9 @@
                                 🔊 English
                             </button>
                         </div>
+                        <a href="word.html?w=${encodeURIComponent(swahiliWord.toLowerCase())}" class="view-details-btn" style="display: inline-block; margin-top: 16px; padding: 12px 24px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-decoration: none; border-radius: 25px; font-weight: 600; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                            📖 View Full Details
+                        </a>
                         <div class="pronunciation-tip">
                             <strong>Pronunciation tip:</strong><br>
                             Swahili vowels: a="ah", e="eh", i="ee", o="oh", u="oo"
@@ -8128,6 +8132,19 @@
                     </div>
                 `;
                 document.body.appendChild(modal);
+
+                // Add hover effect to details button
+                const detailsBtn = modal.querySelector('.view-details-btn');
+                if (detailsBtn) {
+                    detailsBtn.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-2px)';
+                        this.style.boxShadow = '0 6px 20px rgba(102, 126, 234, 0.4)';
+                    });
+                    detailsBtn.addEventListener('mouseleave', function() {
+                        this.style.transform = 'translateY(0)';
+                        this.style.boxShadow = 'none';
+                    });
+                }
 
                 // Close on background click
                 modal.addEventListener('click', function(e) {
