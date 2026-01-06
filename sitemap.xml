@@ -426,4 +426,100 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Communication & Media Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=communication</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Materials & Textures Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=materials</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Marine & Ocean Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=marine</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Celebrations & Ceremonies Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=celebrations</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Kitchen & Cooking Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=kitchen</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Furniture & Home Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=furniture</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Opposites Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=opposites</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Measurements & Quantities Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=measurements</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Safety & Emergency Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=safety</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Personality & Character Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=personality</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Insects & Bugs Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=insects</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Shapes Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=shapes</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
 </urlset>
