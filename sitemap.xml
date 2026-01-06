@@ -458,4 +458,36 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Kitchen & Cooking Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=kitchen</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Furniture & Home Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=furniture</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Opposites Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=opposites</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Measurements & Quantities Category -->
+    <url>
+        <loc>https://kamusikirswahili.com/?category=measurements</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
 </urlset>
